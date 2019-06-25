@@ -10,7 +10,7 @@ phases:
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   install:
     runtime-versions:
-      python: 3.7
+      docker: 18
   build:
     commands:
       - echo Build started on `date`
