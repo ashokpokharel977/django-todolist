@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.1
 
 phases:
   pre_build:
@@ -9,9 +9,9 @@ phases:
       - REPOSITORY_URI=031342435657.dkr.ecr.us-east-1.amazonaws.com/ecsdemorepo
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
-  install:
-    runtime-versions:
-      docker: 18
+  # install:
+  #   runtime-versions:
+  #     docker: 18
   build:
     commands:
       - echo Build started on `date`
