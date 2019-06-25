@@ -1,7 +1,7 @@
 # The first instruction is what image we want to base our container on
 # We Use an official Python runtime as a parent image
 FROM python:3.7
-RUN sudo apt-get install python3-tk -y
+
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
@@ -18,4 +18,4 @@ ADD . /code/
 
 EXPOSE 80
 
-CMD ["python", "mysite/manage.py", "runserver", "0.0.0.0:80"]
+#CMD ["python", "mysite/manage.py", "runserver", "0.0.0.0:80"]
