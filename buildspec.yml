@@ -9,7 +9,7 @@ phases:
       - REPOSITORY_URI=031342435657.dkr.ecr.us-east-1.amazonaws.com/ecsdemorepo
       - echo $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   install:
     runtime-versions:
       docker: 18
