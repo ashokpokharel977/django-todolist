@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 
 phases:
   pre_build:
@@ -10,9 +10,9 @@ phases:
       - echo $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
-  # install:
-  #   runtime-versions:
-  #     docker: 18
+  install:
+    runtime-versions:
+      docker: 18
   build:
     commands:
       - echo Build started on `date`
