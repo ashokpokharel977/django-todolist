@@ -5,6 +5,5 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
-EXPOSE 8080
-# Run the app
-CMD ["./run_app.sh"]
+EXPOSE 80
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
